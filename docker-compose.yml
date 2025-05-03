@@ -1,0 +1,9 @@
+services:
+  code:
+    build:
+      context: ./code
+      dockerfile: Dockerfile
+    container_name: code
+    volumes:
+      - ./code:/home/code
+    working_dir: /home/code
