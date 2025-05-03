@@ -35,6 +35,9 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: mysecretpassword
       POSTGRES_USER: postgres
+    volumes:      
+       - ./postgresql/initdb:/docker-entrypoint-initdb.d
+       - ./postgresql/persistence:/var/lib/postgresql/data      
     networks:
       - app-tier
 networks:
