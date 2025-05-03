@@ -86,7 +86,7 @@ TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-
 
 ## Examples
 
-- example-0: build sqlc from source
+- example-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
 - example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
 - example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
 - example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)

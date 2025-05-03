@@ -1,4 +1,4 @@
-### example-0: build sqlc from source
+# example-0: build [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
 
 Make certain that you have cloned the [sqlc](https://github.com/sqlc-dev/sqlc) repository into /code/ignore/
 
