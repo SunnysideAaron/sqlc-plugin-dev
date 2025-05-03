@@ -50,8 +50,8 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 
 ## Plugins Developed by sqlc Team
 
-- [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories)
-  - check here for updated list.
+- [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories) and [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support)
+  - check here for updated lists.
 - [sqlc-gen-go](https://github.com/sqlc-dev/sqlc-gen-go)
   - example plugin, code is *extracted* from sqlc. This is already part of sqlc and is only there to fork other plugins from.
   - A big part of the code comes from sqlc\internal\codegen\golang
@@ -69,6 +69,13 @@ optional interface
 
 ## Known 3rd party plugins
 
+TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-language-support
+
+- [sqlc-gen-csharp](https://github.com/DaredevilOSS/sqlc-gen-csharp)
+  - [Introducing SQLC C# Plugin: A reverse ORM for .NET Developers](https://www.reddit.com/r/dotnet/comments/1hp6sa5/introducing_sqlc_c_plugin_a_reverse_orm_for_net/)
+
+- [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+
 - [sqlc-gen-go-server](https://github.com/walterwanderley/sqlc-gen-go-server)
   - example plugin forked from sqlc-gen-go
   - generates sqlc-gen-go files + 
@@ -76,31 +83,19 @@ optional interface
     - routes.go
     - service.go
     - main.go
-- [sqlc-gen-csharp](https://github.com/DaredevilOSS/sqlc-gen-csharp)
-  - [Introducing SQLC C# Plugin: A reverse ORM for .NET Developers](https://www.reddit.com/r/dotnet/comments/1hp6sa5/introducing_sqlc_c_plugin_a_reverse_orm_for_net/)
 
 ## Examples
 
-### Example 0 - build sqlc from source
-
-Review the instructions from [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html). The following commands might provide some guidance. They are slightly adjusted.
-
-      make bash
-      cd /home/code/ignore/sqlc
-      go build -o /go/bin/sqlc-dev ./cmd/sqlc
-      go build -o /go/bin/sqlc-gen-json ./cmd/sqlc-gen-json
-      sqlc-dev version
-      
-Testing
-
-rest of examples use sqlc you will either need to install it or build from source.
-if you follow the advice from [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/)
-building to source sets to sqlc-dev not sqlc. adjust the rest as needed.
+- example-0: build sqlc from source
+- example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
+- example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
+- example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
 
 ### Examples TODO
 
+TODO write two dockers
 
-example sqlc dev tutorial
+
 mysql
 postres
 sqlite
@@ -111,6 +106,8 @@ each plugin example
 
 update after release
 https://github.com/sqlc-dev/sqlc/discussions/3077
+
+https://github.com/sqlc-dev/sqlc/issues/3945
 
 
 and update my own post about 3rd party plugins

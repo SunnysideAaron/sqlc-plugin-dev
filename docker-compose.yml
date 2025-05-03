@@ -6,13 +6,26 @@ services:
     container_name: code
     volumes:
       - ./code:/home/code
-      - ./bin:/go/bin
+      # be careful. don't use a bin that other things are installing into during
+      # build or it will overwrite when mounting. why we don't use /go/bin
+      - ./bin:/usr/local/bin
     working_dir: /home/code
     networks:
       - app-tier
-# postresql service copied and adjusted from sqlc
+# mysql and postresql services copied and adjusted from sqlc
 # https://github.com/sqlc-dev/sqlc/blob/main/docker-compose.yml
 # https://docs.sqlc.dev/en/latest/guides/development.html
+  mysql:
+    image: "mysql/mysql-server:8.0"
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: dinotest
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+      MYSQL_ROOT_HOST: '%'
+    networks:
+      - app-tier
   postgresql:
     image: "postgres:16"
     ports:
