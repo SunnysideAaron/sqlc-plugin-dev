@@ -19,12 +19,21 @@ Where to get help:
 
 
 requirements
- go
+ docker
  make
+git
 
 install requirements
 
 copy repos locally into same workspace so IDE / AI can see all the connections
+
+build container.
+
+    docker compose build
+
+Launch container for development
+
+    docker compose run --remove-orphans --service-ports code bash
 
 ## Repos
 
