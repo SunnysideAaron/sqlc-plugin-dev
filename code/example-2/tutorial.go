@@ -15,7 +15,8 @@ func run() error {
 	ctx := context.Background()
 
 	// conn, err := pgx.Connect(ctx, "user=pqgotest dbname=pqgotest sslmode=verify-full")
-	conn, err := pgx.Connect(ctx, "user=postgres dbname=postgres sslmode=verify-full")
+	conn, err := pgx.Connect(ctx, "postgres://postgres:mysecretpassword@postgresql:5432/postgres?sslmode=disable")
+
 	if err != nil {
 		return err
 	}
