@@ -6,4 +6,24 @@ services:
     container_name: code
     volumes:
       - ./code:/home/code
+      - ./bin:/go/bin
     working_dir: /home/code
+    networks:
+      - app-tier
+# postresql service copied and adjusted from sqlc
+# https://github.com/sqlc-dev/sqlc/blob/main/docker-compose.yml
+# https://docs.sqlc.dev/en/latest/guides/development.html
+  postgresql:
+    image: "postgres:16"
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: postgres
+    networks:
+      - app-tier
+networks:
+  app-tier:
+    driver: bridge

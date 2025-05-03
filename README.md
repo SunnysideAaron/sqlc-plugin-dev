@@ -79,9 +79,26 @@ optional interface
 - [sqlc-gen-csharp](https://github.com/DaredevilOSS/sqlc-gen-csharp)
   - [Introducing SQLC C# Plugin: A reverse ORM for .NET Developers](https://www.reddit.com/r/dotnet/comments/1hp6sa5/introducing_sqlc_c_plugin_a_reverse_orm_for_net/)
 
-
-
 ## Examples
+
+### Example 0 - build sqlc from source
+
+Review the instructions from [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html). The following commands might provide some guidance. They are slightly adjusted.
+
+      make bash
+      cd /home/code/ignore/sqlc
+      go build -o /go/bin/sqlc-dev ./cmd/sqlc
+      go build -o /go/bin/sqlc-gen-json ./cmd/sqlc-gen-json
+      sqlc-dev version
+      
+Testing
+
+rest of examples use sqlc you will either need to install it or build from source.
+if you follow the advice from [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/)
+building to source sets to sqlc-dev not sqlc. adjust the rest as needed.
+
+### Examples TODO
+
 
 example sqlc dev tutorial
 mysql
