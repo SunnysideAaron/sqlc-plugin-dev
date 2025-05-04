@@ -66,22 +66,17 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 
 ## Plugins Developed by sqlc Team
 
-- [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories) and [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support)
-  - check here for updated lists.
+- Check [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories) and [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support) for updated lists.
 - [sqlc-gen-go](https://github.com/sqlc-dev/sqlc-gen-go)
   - example plugin, code is *extracted* from sqlc. It is there to fork other plugins from.
-  - A big part of the code comes from sqlc\internal\codegen\golang
+  - It appears code is extracted from:
+    - sqlc\internal\codegen\golang -> sqlc-gen-go\internal
+    - sqlc\internal\inflection -> sqlc-gen-go\internal\inflection
   - generates files:
     - db.go
     - models.go
     - query.sql.go
-
-  - TODO where does the rest come from?
-
-TODO list files output
-optional interface
-
-
+    - querier.go (optional see flag: emit_interface)
 - [sqlc-gen-python](https://github.com/sqlc-dev/sqlc-gen-python)
 - [sqlc-gen-kotlin](https://github.com/sqlc-dev/sqlc-gen-kotlin)
 - [sqlc-gen-typescript](https://github.com/sqlc-dev/sqlc-gen-typescript)
@@ -115,7 +110,7 @@ TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-
 
 ### Examples TODO
 
-
+example with all settings to make testing easier
 
 each plugin example
 
