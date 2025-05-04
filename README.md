@@ -113,6 +113,7 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
   - /example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
   - /example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
   - /example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
+  - /example-4: Configuration
 - /code/ignore/sqlc/examples
   - These are included with the sqlc code. There isn't any documentation so I'm not clear on what they are examples of. Yet.
   - TODO find out more.
@@ -129,6 +130,10 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 ### Examples TODO
 
 example with all settings to make testing easier
+
+example of overrides https://docs.sqlc.dev/en/latest/reference/config.html
+example of rules https://docs.sqlc.dev/en/latest/reference/config.html
+example of kotlin and python configs
 
 each plugin example
 
