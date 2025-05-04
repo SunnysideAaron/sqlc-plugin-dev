@@ -24,6 +24,9 @@ services:
       MYSQL_DATABASE: dinotest
       MYSQL_ROOT_PASSWORD: mysecretpassword
       MYSQL_ROOT_HOST: '%'
+    volumes:      
+       - ./mysql/initdb:/docker-entrypoint-initdb.d
+       - ./mysql/persistence:/var/lib/mysql  
     networks:
       - app-tier
   postgresql:

@@ -95,12 +95,11 @@ TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-
 
 TODO write two dockers
 
-
 mysql
-postres
-sqlite
 
 each plugin example
+
+what are the examples at \sqlc\examples trying to show?
 
 ## TODO
 

@@ -27,5 +27,6 @@ go.work.sum
 # saves compiled code between launches of container.
 bin/
 
-#postgresql persistence
+#database persistence
+mysql/persistence
 postgresql/persistence
