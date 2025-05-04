@@ -29,7 +29,8 @@ Where to get help:
 - Clone core repos into /code/ignore. 
 
       make git
-  Will only work once but will git sqlc, plugin-sdk-go, and sqlc-gen-go repositories. This is probably the minimum to get started. Otherwise your IDE / AI wont be able to see all the connections and how it all works together.
+      make git2      
+  These will only work once. "make git" does the core repositories of sqlc, plugin-sdk-go, and sqlc-gen-go. This is probably the minimum to get started. Otherwise your IDE / AI wont be able to see all the connections and how it all works together. "make git2" grabs all other known repos of sqlc plugins. Grab all the examples you can I say! You could of course clone repos one by one depending on what you want to play with.
   
   Any repos cloned into code/ignore wont become part of this projects code.
 - Launch container for development
@@ -49,9 +50,7 @@ Any sql files in the /initdb gets run when the container starts if /persistence 
 
 They save data in /persistence. Delete this folder to reset the database.
 
-These are similar but not the same as the ones in from sqlc/docker-compose.yml. I didn't want to mess with docker running inside docker.
-
-Bring up which ever ones you need for the examples you are working on.
+These are similar but not the same as the ones in sqlc/docker-compose.yml. I didn't want to mess with docker running inside docker.
 
 ## Notes
 
@@ -132,7 +131,6 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 example with all settings to make testing easier
 
 each plugin example
-
 
 
 ## TODO
