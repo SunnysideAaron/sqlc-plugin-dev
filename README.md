@@ -36,6 +36,23 @@ Where to get help:
 
       make bash
 
+## databases
+
+There are two docker containers of databases for use. MySQL and PostgreSQL.
+
+    make my-up
+    make post-up
+    make my-down
+    make post-down
+
+Any sql files in the /initdb gets run when the container starts.
+
+They save data in /persistence. Delete this folder to reset the database.
+
+These are similar but not the same as the ones in from sqlc/docker-compose.yml. I didn't want to mess with docker running inside docker.
+
+Bring up which ever ones you need for the examples you are working on.
+
 ## Notes
 
 Plugins are compiled to WASM. This means they don't have to be developed in Go. [sqlc-gen-greeter](https://github.com/sqlc-dev/sqlc-gen-greeter) is an example of a plugin written in Rust.
@@ -44,17 +61,21 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 
 - [sqlc](https://github.com/sqlc-dev/sqlc)
   - main executable
-- [plugin-sdk-go]()
+- [plugin-sdk-go](https://github.com/sqlc-dev/plugin-sdk-go)
   - connection between sqlc and plugins.
-  - TODO is this now part of sqlc? is the code extracted from sqlc? hasn't been updated in a bit. sqlc-gen-go is still pointing at it.
 
 ## Plugins Developed by sqlc Team
 
 - [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories) and [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support)
   - check here for updated lists.
 - [sqlc-gen-go](https://github.com/sqlc-dev/sqlc-gen-go)
-  - example plugin, code is *extracted* from sqlc. This is already part of sqlc and is only there to fork other plugins from.
+  - example plugin, code is *extracted* from sqlc. It is there to fork other plugins from.
   - A big part of the code comes from sqlc\internal\codegen\golang
+  - generates files:
+    - db.go
+    - models.go
+    - query.sql.go
+
   - TODO where does the rest come from?
 
 TODO list files output
@@ -84,7 +105,8 @@ TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-
     - service.go
     - main.go
 
-## Examples
+
+### Examples
 
 - example-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
 - example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
@@ -93,9 +115,7 @@ TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-
 
 ### Examples TODO
 
-TODO write two dockers
 
-mysql
 
 each plugin example
 
