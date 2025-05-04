@@ -15,7 +15,7 @@ func run() error {
 	ctx := context.Background()
 
 	// db, err := sql.Open("mysql", "user:password@/dbname?parseTime=true")
-	db, err := sql.Open("mysql", "user:mysecretpassword@/dinotest?parseTime=true")
+	db, err := sql.Open("mysql", "root:mysecretpassword@tcp(mysql:3306)/dinotest?parseTime=true")
 	if err != nil {
 		return err
 	}
