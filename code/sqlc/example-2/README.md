@@ -4,7 +4,7 @@ Just the example from the docs. [Getting started with PostgreSQL](https://docs.s
 
 Some commands that might be useful.
 
-    cd /home/code/example-2/
+    cd /home/code/sqlc/example-2/
     sqlc generate
     go get github.com/jackc/pgx/v5
     go build ./...

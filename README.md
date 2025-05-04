@@ -45,7 +45,7 @@ There are two docker containers of databases for use. MySQL and PostgreSQL.
     make my-down
     make post-down
 
-Any sql files in the /initdb gets run when the container starts.
+Any sql files in the /initdb gets run when the container starts if /persistence is empty.
 
 They save data in /persistence. Delete this folder to reset the database.
 
@@ -85,28 +85,47 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 
 ## Known 3rd party plugins
 
-TODO  https://docs.sqlc.dev/en/latest/reference/language-support.html#community-language-support
-
+- Check [Community language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#community-language-support) for updated lists.
+- [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+  - This is interesting since it's language agnostic. **TODO look at this.**
 - [sqlc-gen-csharp](https://github.com/DaredevilOSS/sqlc-gen-csharp)
   - [Introducing SQLC C# Plugin: A reverse ORM for .NET Developers](https://www.reddit.com/r/dotnet/comments/1hp6sa5/introducing_sqlc_c_plugin_a_reverse_orm_for_net/)
+- [sqlc-gen-fsharp](https://github.com/kaashyapan/sqlc-gen-fsharp)
+- [sqlc-gen-java](https://github.com/tandemdude/sqlc-gen-java)
+- [sqlc-plugin-php-dbal](https://github.com/lcarilla/sqlc-plugin-php-dbal)
+- [sqlc-gen-ruby](https://github.com/DaredevilOSS/sqlc-gen-ruby)
+- [sqlc-gen-zig](https://github.com/tinyzimmer/sqlc-gen-zig)
 
-- [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+## Other plugins
 
 - [sqlc-gen-go-server](https://github.com/walterwanderley/sqlc-gen-go-server)
-  - example plugin forked from sqlc-gen-go
+  - forked from sqlc-gen-go
   - generates sqlc-gen-go files + 
     - openapi.yml
     - routes.go
     - service.go
     - main.go
 
-
 ### Examples
 
-- example-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
-- example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
-- example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
-- example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
+- code/sqlc
+  - examples 0-3 are all from the sqlc docs. They are included here to make copying for your own testing easier. They are already adjusted to work with the databases provided.
+  - /example-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
+  - /example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
+  - /example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
+  - /example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
+- /code/ignore/sqlc/examples
+  - These are included with the sqlc code. There isn't any documentation so I'm not clear on what they are examples of. Yet.
+  - TODO find out more.
+  - /authors
+    - basic starter example. Used in docs.
+  - /batch
+    - I'm guessing something with batch inserts or transactions
+  - /booktest
+  - /jets
+    - has some alter tables in schema
+  - /ondeck
+    - has schema spread across files
 
 ### Examples TODO
 
@@ -114,7 +133,7 @@ example with all settings to make testing easier
 
 each plugin example
 
-what are the examples at \sqlc\examples trying to show?
+
 
 ## TODO
 

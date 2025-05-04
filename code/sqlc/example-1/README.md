@@ -4,7 +4,7 @@ Just the example from the docs. [Getting started with MySQL](https://docs.sqlc.d
 
 Some commands that might be useful.
 
-    cd /home/code/example-1/
+    cd /home/code/sqlc/example-1/
     sqlc generate
     go get github.com/go-sql-driver/mysql
     go build ./...

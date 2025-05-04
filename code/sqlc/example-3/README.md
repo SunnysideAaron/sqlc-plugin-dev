@@ -4,7 +4,7 @@ Just the example from the docs. [Getting started with SQLite](https://docs.sqlc.
 
 Some commands that might be useful.
 
-    cd /home/code/example-3/
+    cd /home/code/sqlc/example-3/
     sqlc generate
     go get modernc.org/sqlite
     go build ./...
