@@ -27,6 +27,8 @@ code-git2:
 	@git clone https://github.com/fdietze/sqlc-gen-from-template ./code/ignore/sqlc-gen-from-template
 	@git clone https://github.com/walterwanderley/sqlc-gen-go-server ./code/ignore/sqlc-gen-go-server
 	@git clone https://github.com/walterwanderley/sqlc-http ./code/ignore/sqlc-http
+	@git clone https://github.com/walterwanderley/sqlc-connect ./code/ignore/sqlc-connect
+	@git clone https://github.com/walterwanderley/sqlc-grpc ./code/ignore/sqlc-grpc
 
 ###########################################################
 

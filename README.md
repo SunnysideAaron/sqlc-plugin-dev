@@ -8,7 +8,7 @@ repos listing
 examples
 
 TODO (is this correct?)
-if you want to change what is in the files output by sqlc fork sqlc-gen-go.or json? what other outputs baked in?
+if you want to change what is in the files output by sqlc. Then fork sqlc-gen-go. or json? what other outputs baked in?
 if you want different files all together then fork sqlc-gen-from-template.
 if you want a new plugin written in a different language then???? what? How to do that?
 
@@ -164,13 +164,15 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 
 ## Examples Provided by sqlc-plugin-dev
 
-- code/sqlc
-  - examples 0-3 are all from the sqlc docs. They are included here to make copying for your own testing easier. They are already adjusted to work with the databases provided.
-  - /example-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
-  - /example-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
-  - /example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
-  - /example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
-  - /example-4: Configuration
+- code/0-sqlc
+  - examples 0-0 through 0-3 are all from the sqlc docs. They are included here to make copying for your own testing easier. They are already adjusted to work with the databases provided.
+  - /example0-0: [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
+  - /example0-1: [Getting started with MySQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html)
+  - /example0-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
+  - /example0-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
+  - /example0-4: Configuration
+- code/1-sqlc-gen-from-template
+  - /example1-0: [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
 
 ### Other Examples
 

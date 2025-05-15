@@ -1,0 +1,1 @@
+# example1-0: build [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html)
