@@ -63,6 +63,9 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
 - [plugin-sdk-go](https://github.com/sqlc-dev/plugin-sdk-go)
   - connection between sqlc and plugins.
 
+**TODO** list each repo and language it was developed in.
+
+
 ## Plugins Developed by sqlc Team
 
 - Check [sqlc-dev/repositories](https://github.com/orgs/sqlc-dev/repositories) and [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support) for updated lists.
@@ -104,8 +107,12 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
     - routes.go
     - service.go
     - main.go
+  - pulls templates from 
+    - [sqlc-http](github.com/walterwanderley/sqlc-http/)
+    - [sqlc-connect](github.com/walterwanderley/sqlc-connect)
+	  - [sqlc-grpc](github.com/walterwanderley/sqlc-grpc)
 
-### Examples
+### Examples Provided by SQLC-PLUGIN-DEV
 
 - code/sqlc
   - examples 0-3 are all from the sqlc docs. They are included here to make copying for your own testing easier. They are already adjusted to work with the databases provided.
@@ -114,6 +121,9 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
   - /example-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
   - /example-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
   - /example-4: Configuration
+
+other exampels
+
 - /code/ignore/sqlc/examples
   - These are included with the sqlc code. There isn't any documentation so I'm not clear on what they are examples of. Yet.
   - TODO find out more.
@@ -128,8 +138,6 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
     - has schema spread across files
 
 ### Examples TODO
-
-example with all settings to make testing easier
 
 example of overrides https://docs.sqlc.dev/en/latest/reference/config.html
 example of rules https://docs.sqlc.dev/en/latest/reference/config.html
@@ -147,3 +155,16 @@ https://github.com/sqlc-dev/sqlc/issues/3945
 
 
 and update my own post about 3rd party plugins
+
+
+
+## AI answers
+question:
+I want a better understanding of the sqlc library. Anaylyse the code at path E:\Working\sqlc-plugin-dev\code\ignore\sqlc and give me a high over view of how it works in 3 paragraphs or less
+---
+answer:
+sqlc is a SQL compiler that generates type-safe code from SQL queries. The workflow is straightforward: you write SQL queries and schema definitions, sqlc parses and analyzes them, then generates code with type-safe interfaces to those queries in your chosen language. The core functionality involves parsing SQL files, analyzing the schema and queries to understand types and relationships, and then using this information to generate language-specific code that handles database interactions.
+
+The architecture consists of several components: a parser that understands different SQL dialects (PostgreSQL, MySQL, SQLite), an analyzer that determines types and validates queries, and a code generation system that's been extended through plugins. These plugins (like sqlc-gen-go, sqlc-gen-python, sqlc-gen-typescript) allow sqlc to support multiple programming languages beyond its original Go implementation.
+
+Recent versions have added features like managed databases for improved query analysis, linting capabilities through sqlc vet, and schema verification with sqlc verify. The configuration is handled through a YAML file that specifies database engine, input files, output location, and language-specific options. This plugin-based architecture allows the community to extend sqlc's capabilities to additional languages and frameworks.
