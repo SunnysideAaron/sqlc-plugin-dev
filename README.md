@@ -12,6 +12,9 @@ if you want to change what is in the files output by sqlc. Then fork sqlc-gen-go
 if you want different files all together then fork sqlc-gen-from-template.
 if you want a new plugin written in a different language then???? what? How to do that?
 
+TODO copy docs or links to docs in main readme. template/readme as well. - [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+
+
 sqlc links:
 
 - [sqlc.dev](https://sqlc.dev/)
