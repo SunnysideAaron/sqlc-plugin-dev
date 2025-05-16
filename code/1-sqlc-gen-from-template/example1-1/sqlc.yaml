@@ -1,0 +1,17 @@
+version: "2"
+plugins:
+- name: sqlc-gen-from-template
+  process:
+    cmd: sqlc-gen-from-template # https://github.com/fdietze/sqlc-gen-from-template
+sql:
+  - engine: "postgresql"
+    queries: "query.sql"
+    schema: "schema.sql"
+    codegen:
+    - out: output
+      plugin: sqlc-gen-from-template
+      options:
+        template: "protobuf_report.tmpl"
+        filename: "protobuf report.md"
+        # test setting
+        test_setting: true

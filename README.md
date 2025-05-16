@@ -2,18 +2,24 @@
 
 This project contains notes and examples on how to develop sqlc plugins.
 
-I couldn't find any documentation on developing plugins. So I created the help I needed. Hopefully this can be useful to others.
+I couldn't find any documentation on developing plugins. So I created the help I
+needed. Hopefully this can be useful to others.
 TODO
 repos listing
 examples
 
 TODO (is this correct?)
-if you want to change what is in the files output by sqlc. Then fork sqlc-gen-go. or json? what other outputs baked in?
-if you want different files all together then fork sqlc-gen-from-template.
-if you want a new plugin written in a different language then???? what? How to do that?
+- IF you want to change what is in the files output by sqlc.
+  - THEN fork sqlc-gen-go. or json? what other outputs baked in?
+- IF you want files output for your language.
+  - THEN lookup your language at [Database and language support](https://docs.sqlc.dev/en/latest/reference/language-support.html#database-and-language-support)
+  - IF your language isn't there.
+    - THEN use [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+    - OR write your own plugin using either Go or the language of your choice.
+- IF you want different files all together then use [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template).
+  - OR write your own plugin using either Go or the language of your choice.
 
 TODO copy docs or links to docs in main readme. template/readme as well. - [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
-
 
 sqlc links:
 
@@ -176,6 +182,8 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
   - /example0-4: Configuration
 - code/1-sqlc-gen-from-template
   - /example1-0: [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+- code/1-sqlc-gen-from-template
+  - /example1-1: Protobuf data structures
 
 ### Other Examples
 

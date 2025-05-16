@@ -1,0 +1,52 @@
+# Protobuf report!
+
+Demonstrates how to access the protobuf data structures provided by sqlc.
+
+## .SqlcVersion
+{{.SqlcVersion}}
+
+## .PluginOptions
+{{.PluginOptions}}
+
+## .GlobalOptions
+{{.GlobalOptions}}
+
+## .Settings
+{{.Settings}}
+
+## .Queries
+{{range .Queries}}
+- .Name: {{.Name}}
+  - .Comments: {{.Comments}}
+  - .Cmd: {{.Cmd}}
+  - .Columns: {{.Columns}}
+  - .Params: {{.Params}}
+  - .Filename: {{.Filename}}
+  - .InsertIntoTable: {{.InsertIntoTable}}
+  - .Text: 
+```sql
+{{.Text}}
+```
+{{- end}}
+
+## .Catalog
+  - .Name: {{.Catalog.Name}}
+  - .Comment: {{.Catalog.Comment}}
+  - .DefaultSchema: {{.Catalog.DefaultSchema}}
+  - .Schemas:
+{{- range .Catalog.Schemas}}
+    - .Name: {{.Name}}
+    - .Enums: {{.Enums}}
+    - .CompositeTypes: {{.CompositeTypes}}
+    - .Tables: 
+{{- range .Tables}}    
+      - .Rel: {{.Rel}}
+      - .Columns: {{.Columns}}
+      - .Comment: {{.Comment}}
+{{- end}}
+{{- end}}
+
+## Everything
+```json
+{{ printf "%#v" . }}
+```
