@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  description: mymodule Services
+  title: mymodule
+  version: 0.0.1
+  contact:
+    name: sqlc-http
+    url: https://github.com/walterwanderley/sqlc-http
+tags:
+  - author
+  
+paths:
+  /authors:
+    post:
+      tags:
+        - author
+      summary: CreateAuthor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                bio:
+                  type: string
+                created_at:
+                  type: string
+                  format: date-time
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                bio:
+                  type: string
+                created_at:
+                  type: string
+                  format: date-time
+      
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authorAuthor"
+          
+        "default":    
+          description: Error message
+          content:
+            text/plain:
+              schema:
+                type: string  
+    get:
+      tags:
+        - author
+      summary: ListAuthors
+      
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/authorAuthor"
+          
+        "default":    
+          description: Error message
+          content:
+            text/plain:
+              schema:
+                type: string  
+    
+  /authors/{id}:
+    delete:
+      tags:
+        - author
+      summary: DeleteAuthor
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+            format: int64
+      
+      responses:
+        "200":
+          description: OK
+          
+        "default":    
+          description: Error message
+          content:
+            text/plain:
+              schema:
+                type: string  
+    get:
+      tags:
+        - author
+      summary: GetAuthor
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+            format: int64
+      
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authorAuthor"
+          
+        "default":    
+          description: Error message
+          content:
+            text/plain:
+              schema:
+                type: string  
+    
+  /authors/{id}/bio:
+    patch:
+      tags:
+        - author
+      summary: UpdateAuthorBio
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bio:
+                  type: string
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                bio:
+                  type: string
+      
+      responses:
+        "200":
+          description: OK
+          
+        "default":    
+          description: Error message
+          content:
+            text/plain:
+              schema:
+                type: string  
+    
+  
+components:
+  schemas:
+    authorAuthor:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        bio:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+    
+  

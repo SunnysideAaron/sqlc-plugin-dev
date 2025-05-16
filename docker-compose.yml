@@ -4,6 +4,8 @@ services:
       context: ./code
       dockerfile: Dockerfile
     container_name: code
+    ports:
+      - "5000:5000"
     volumes:
       - ./code:/home/code
       # be careful. don't use a bin that other things are installing into during

@@ -180,10 +180,15 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
   - /example0-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
   - /example0-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
   - /example0-4: Configuration
-- code/1-sqlc-gen-from-template
-  - /example1-0: [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
-- code/1-sqlc-gen-from-template
-  - /example1-1: Protobuf data structures
+- code/1-sqc-gen-go
+  - /example1-0: [sqlc-gen-go](https://github.com/sqlc-dev/sqlc-gen-go) **TODO**
+- code/2-sqlc-gen-from-template
+  - /example2-0: [sqlc-gen-from-template](https://github.com/fdietze/sqlc-gen-from-template)
+  - /example2-1: Protobuf data structures
+- code/3-sqlc-gen-go-server
+  - /example3-0: [sqlc-gen-go-server](https://github.com/walterwanderley/sqlc-gen-go-server) **TODO**
+- code/4-sqlc-http
+  - /example4-0: [sqlc-http](https://github.com/walterwanderley/sqlc-http)
 
 ### Other Examples
 

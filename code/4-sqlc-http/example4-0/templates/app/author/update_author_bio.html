@@ -1,0 +1,25 @@
+{{define "content"}}
+{{template "hx-context.html" . -}}
+<h5>Update Author Bio</h5>
+<form hx-patch="authors/{id}/bio?nested=true" hx-target="#response">
+    <div class="mb-3">
+        <label for="bio" class="form-label">Bio</label>
+        <input id="bio"  name="bio" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label for="id" class="form-label">Id *</label>
+        <input id="id" required name="id" type="number" class="form-control"/>
+    </div>
+    <div class="p-3">
+        <button class="btn btn-primary" type="submit">Update</button>
+        <button type="button" class="btn btn-secondary" onclick="javascript:window.history.back()">Back</button>
+    </div>
+    
+</form> 
+<hr class="hr" />
+<div id="response"></div>
+
+<script>
+    htmx.on("htmx:configRequest", replacePathParams)
+</script>
+{{end}}

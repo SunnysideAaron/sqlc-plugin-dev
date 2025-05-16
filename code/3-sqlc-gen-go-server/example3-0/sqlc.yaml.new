@@ -1,0 +1,18 @@
+version: '2'
+plugins:
+- name: go-server
+  wasm:
+    url: https://github.com/walterwanderley/sqlc-gen-go-server/releases/download/v0.1.0/sqlc-gen-go-server.wasm
+    sha256: "bdd6fd13a062f9319c4ab13cbdc359c0275b531b8698be51ff843904bf919a5c"
+sql:
+- schema: schema.sql
+  queries: query.sql
+  engine: postgresql
+  codegen:
+  - plugin: go-server
+    out: internal/db
+    options:
+      package: db
+      sql_package: pgx/v5
+      server_type: http
+      module: "tutorial.sqlc.dev/app"
