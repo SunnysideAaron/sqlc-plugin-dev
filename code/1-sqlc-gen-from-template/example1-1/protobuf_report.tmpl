@@ -3,19 +3,23 @@
 Demonstrates how to access the protobuf data structures provided by sqlc.
 
 ## .SqlcVersion
+
 {{.SqlcVersion}}
 
 ## .PluginOptions
+
 {{.PluginOptions}}
 
 ## .GlobalOptions
+
 {{.GlobalOptions}}
 
 ## .Settings
+
 {{.Settings}}
 
 ## .Queries
-{{range .Queries}}
+{{ range .Queries}}
 - .Name: {{.Name}}
   - .Comments: {{.Comments}}
   - .Cmd: {{.Cmd}}
@@ -46,7 +50,10 @@ Demonstrates how to access the protobuf data structures provided by sqlc.
 {{- end}}
 {{- end}}
 
-## Everything
+## Everything json
 ```json
 {{ printf "%#v" . }}
 ```
+
+## Everything Plain
+{{ . }}
