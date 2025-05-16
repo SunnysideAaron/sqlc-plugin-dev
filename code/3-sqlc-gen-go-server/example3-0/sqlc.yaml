@@ -2,8 +2,10 @@ version: '2'
 plugins:
 - name: go-server
   wasm:
-    url: https://github.com/walterwanderley/sqlc-gen-go-server/releases/download/v0.1.0/sqlc-gen-go-server.wasm
-    sha256: "bdd6fd13a062f9319c4ab13cbdc359c0275b531b8698be51ff843904bf919a5c"
+    url: file:///home/code/ignore/sqlc-gen-go-server/bin/sqlc-gen-go-server.wasm
+    sha256: "83d91a6e1c9a081e152008c95bdc2bba884d988a7c54c89d106ea595600051c5"
+    # url: https://github.com/walterwanderley/sqlc-gen-go-server/releases/download/v0.1.0/sqlc-gen-go-server.wasm
+    # sha256: "bdd6fd13a062f9319c4ab13cbdc359c0275b531b8698be51ff843904bf919a5c"
 sql:
 - schema: schema.sql
   queries: query.sql
@@ -14,4 +16,14 @@ sql:
     options:
       package: db
       sql_package: pgx/v5
-      server_type: http  
+      server_type: http # The server type: grpc, connect or http.      
+      # module: "my-module" # The module name for the generated go.mod.
+      # metric: false # If true, enable open telemetry metrics.
+      # tracing: false # If true, enable open telemetry distributed tracing.
+      # litefs: false # If true, enable support for distributed SQLite powered by embedded LiteFS.
+      # litestream: false # If true, enable support for continuous backup sqlite to S3 powered by embeded Litestream.
+      # migration_path: "" # If you want to execute database migrations on startup.
+      # migration_lib: "goose" # The database migration library. (goose or migrate)
+      # skip_go_mod: false # If true, skip the generation of the go.mod.
+      # skip_queries: "" # Comma separated list (regex) of queries to ignore
+      # append: false # If true, enable the append mode and do not generate the editable files. 

@@ -5,6 +5,8 @@ WORKDIR /home/code
 COPY . .
 
 # Installs into /go/bin
+# sqlc-gen-go-server does not work with sqlc 1.29.0 but does with 1.25.0
+# RUN go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.25.0
 RUN go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.29.0
 RUN go install github.com/fdietze/sqlc-gen-from-template@v1.0.0
 
