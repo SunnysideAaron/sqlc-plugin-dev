@@ -4,8 +4,9 @@ Make certain that you have cloned the [sqlc](https://github.com/sqlc-dev/sqlc) r
 
 Review the instructions from [Developing sqlc](https://docs.sqlc.dev/en/latest/guides/development.html). The following commands might provide some guidance. They are slightly adjusted.
 
-      make bash
-      cd /home/code/ignore/0-sqlc
+
+      make code-bash
+      cd /home/code/ignore/sqlc
       go build -o /go/bin/sqlc-dev ./cmd/sqlc
       go build -o /go/bin/sqlc-gen-json ./cmd/sqlc-gen-json
       sqlc-dev version

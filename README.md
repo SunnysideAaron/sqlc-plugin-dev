@@ -180,6 +180,8 @@ Plugins are compiled to WASM. This means they don't have to be developed in Go. 
   - /example0-2: [Getting started with PostgreSQL](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
   - /example0-3: [Getting started with SQLite](https://docs.sqlc.dev/en/latest/tutorials/getting-started-sqlite.html)
   - /example0-4: Configuration
+  - /example0-5: Developing sqlc Sandbox. Testing against Postgress.
+    - I found building sqlc slow. One may want to try developing on sqlc-gen-go first. Then copy over.
 - code/1-sqc-gen-go
   - /example1-0: [sqlc-gen-go](https://github.com/sqlc-dev/sqlc-gen-go) **TODO**
 - code/2-sqlc-gen-from-template
